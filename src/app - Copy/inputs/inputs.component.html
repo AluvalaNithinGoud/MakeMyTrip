@@ -1,0 +1,53 @@
+<router-outlet />
+<hr>
+<n1-input cid="nsk" [disabled]="false" label="newLabel" type="text" value="123"></n1-input>
+<!-- <hr>
+<n1-input [cid]="cid" [disabled]="false" [label]="label" [type]="type" [value]="value"></n1-input>
+<hr>
+<form [formGroup]="profileForm">
+    <n1-input [cid]="cid1" [disabled]="disabled" [type]="type" [value]="value"
+        [formControlName]="cid1"></n1-input>
+    <n1-input [cid]="cid2" [disabled]="disabled" [label]="label" [type]="type" [value]="value"
+        [formControlName]="cid2"></n1-input>
+</form>
+<hr> -->
+<n1-radio 
+  [options]="genderOptions"
+  [(value)]="selectedGender"
+  [name]="'gender'"
+  [label]="'Gender Selection'">
+</n1-radio>
+  
+
+
+<n1-dropdown
+  [data]="dropdownOptions"
+  [(value)]="selectedOption"
+  [label]="' Dropdown'">
+</n1-dropdown>
+
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- <n1-textarea 
+    [label]="'Enter your text here...'"
+    [placeholder]="'write anything here'">
+</n1-textarea> -->
+<from-to>
+  
+</from-to>
+
+
+
+<book-now></book-now>
+
+  <!-- <date-range></date-range> -->

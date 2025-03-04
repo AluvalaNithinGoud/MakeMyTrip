@@ -1,0 +1,419 @@
+<router-outlet />
+
+
+
+
+<!-- <div class="flex   mb-[20px] md:mb-[25px]">
+  <div class=" w-1/3  relative cursor border-right  rounded-lg flex w-full bg-white ">
+    <div class="w-1/3 hover:shadow-lg"> <n1-from></n1-from></div>
+
+    <n1-swap-button></n1-swap-button>
+    <div class="w-1/3 hover:shadow-lg"> <n1-to></n1-to></div>
+    <div class="w-1/6 relative border p-2   hover:shadow-lg">
+      <n1-departure-return></n1-departure-return>
+    </div>
+    <div class="w-1/4 flex flex-col border p-2 rounded-r-lg  hover:shadow-lg relative ">
+      <n1-travellars-class></n1-travellars-class>
+    </div>
+
+
+  </div>
+</div> -->
+
+<br>
+ <div class=" p-3 flex justify-center" style="background-color: rgb(20, 40, 77);"> 
+ 
+<!-- <div class="  mt-10 relative z-0 space-x-6" *ngFor="let  all of  group">
+  <n1-icons-group [option]=" all"></n1-icons-group>
+  </div> -->
+
+
+
+  <div class="  mt-10 relative z-0 space-x-6" *ngFor="let icon_in of  tabs">
+    <n1-icons-tabs [option]=" icon_in"></n1-icons-tabs>
+    </div>
+    <br>
+<!-- <div class="w-full bg-white p-4 rounded-lg   justify-center  " > 
+  <br>
+  <br> 
+  <div class=" w-full"> 
+<div class=" ">
+<n1-radio [options]="flyOptions" [(value)]="selectedFlyOption" [name]="'flyOptions'"
+  [label]="'Gender Selection'" class=" "></n1-radio>
+</div>
+
+<div class="w-full relative cursor p-2    rounded-lg flex w-full bg-white ">
+
+  <div class="w-1/2   rounded-l-lg  border">
+    <n1-dropdown-airport point="From :" [options]="fromDropdownOptions" [selected]="selectedFrom"
+     class=" font-bold text-gray-900 text-xl block w-full outline-0 cursor-pointer transition-all p-1  "></n1-dropdown-airport>
+  </div>
+
+  <n1-swap-button></n1-swap-button>
+
+  <div class="w-1/2   border">
+    <n1-dropdown-airport point="To :" [options]="toDropdownOptions" [selected]="selectedTo" class="     
+    font-bold text-gray-900 text-xl block w-full outline-0 cursor-pointer transition-all p-1  "></n1-dropdown-airport>
+  </div>
+
+  <div class=" w-1/3 relative border p-2    ">
+    <n1-departure-return [(value)]="selectedDepartureReturnDates" (valueChange)="onDatesChange($event)">
+    </n1-departure-return>
+  </div>
+
+  <div class=" w-1/4 border p-2    ">
+    <n1-dropdown-airport point="Travellers :" [options]="seatsbooking" [selected]="seatNumbers" 
+    class="p-1 font-bold text-gray-900 text-medium block w-full outline-0 cursor-pointer transition-all "></n1-dropdown-airport>
+  </div>
+
+  <div class="w-1/2 border p-2 rounded-r-lg    ">
+    <n1-dropdown-airport point=" class :" [options]="classbooking" [selected]="classes" class="p-1 font-bold text-gray-900 text-medium block w-full outline-0 cursor-pointer transition-all   "></n1-dropdown-airport>
+  </div>
+
+  </div>
+
+  <div class=" ">
+    <n1-radio [options]="genderOptions" [(value)]="selectedGender" [name]="'gender'"
+      [label]="'Gender Selection'" class=" "> </n1-radio>
+  </div>
+
+</div>
+</div> -->
+ 
+</div>
+ 
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+{{selectedFrom.name}}
+ {{selectedFlyOption }}
+Selected Dates: {{ selectedDepartureReturnDates?.[0] | date: 'MM/dd/yyyy' }} - {{ selectedDepartureReturnDates?.[1] |
+date: 'MM/dd/yyyy' }}
+{{selectedGender}}
+ 
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+
+ <div class="flex justify-between">
+  <n1-details-input [(value)]="firstName" [label]="'First Name'" [placeholder]="'Enter your first name here'"
+    [name]="'firstName'" required></n1-details-input>
+
+  <n1-details-input [(value)]="lastname" [label]="'Last Name'" [placeholder]="'Enter your last name'"
+    [name]="'lastName'" required [type]="'text'"></n1-details-input>
+
+  <n1-details-input [(value)]="number" [label]="'Mobile Number'" [placeholder]="'Enter your mobile number'"
+    [name]="'mobilenumber'" [pattern]="'^[0-9]{10}$'" required [type]="'number'"
+    class="-moz-appearance: textfield  "></n1-details-input>
+
+  <n1-details-input [(value)]="email" [label]="'Email'" [placeholder]="'Enter your email'" [name]="'email'"
+    [pattern]="'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'" required [type]="'text'"></n1-details-input>
+</div>
+
+ 
+<!-- User Selected From : {{selectedFrom.name}}
+User Selected To : {{selectedTo.name}} -->
+{{firstName}}
+{{lastname}}
+{{number}}
+{{email}}
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+ 
+
+
+
+<div class="flex   space-x-4  ">
+  <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2" *ngFor="let flight of flightdetails">
+    <n1-flight-select [option]="flight"></n1-flight-select>
+  </div>
+</div>
+
+
+
+<!-- <n1-flight-select [options]="flightdetails"></n1-flight-select> -->
+
+<div class="w-full  " *ngFor="let booking of completebookingoptions">
+  <n1-complete-booking [option]="booking"></n1-complete-booking>
+</div>
+
+
+<div class="w-full  " *ngFor="let  datechange of cancel">
+  <n1-cancellation [option]="datechange"></n1-cancellation>
+</div>
+
+
+<div class="w-full  " *ngFor="let   addonsradio of addons">
+  <n1-add-ons [option]="addonsradio"></n1-add-ons>
+</div>
+
+
+<n1-imp-information></n1-imp-information>
+
+
+<div class="w-full  " *ngFor="let vip of flylike">
+  <n1-vip [option]=" vip"></n1-vip>
+</div>
+
+<div class="w-full  " *ngFor="let  adult of travellers">
+  <n1-travellers-details [option]=" adult"></n1-travellers-details>
+</div>
+
+<div class="w-full  " *ngFor="let   fare of summary">
+  <n1-fare-summary [option]=" fare"></n1-fare-summary>
+</div>
+<div class="w-full  " *ngFor="let  promo of promocodes">
+  <n1-promo-code [option]="  promo"></n1-promo-code >
+</div>
+
+<div class="" *ngFor="let   filters of popular">
+  <n1-popular-filters [option]="filters" [(value)]="selectedfliter "  ></n1-popular-filters >
+</div>
+
+ <!-- {{selectedfliter}} -->
+
+
+ <div class="w-full  " *ngFor="let  onwardreturn  of onwardfilters">
+  <n1-onward-return-filter [option]=" onwardreturn  "></n1-onward-return-filter >
+</div>
+
+
+<n1-hotel-filter [option]="hotelfilters"></n1-hotel-filter>
+
+
+<div class="w-full  " *ngFor="let  hotel  of popularhotles">
+  <n1-popular-hotel [option]="  hotel  "></n1-popular-hotel >
+</div>
+
+
+<div class="w-full  " *ngFor="let  review  of  booking_review">
+  <n1-review-booking [option]="  review  "></n1-review-booking >
+</div>
+
+
+<div class="w-full  " *ngFor="let  guest  of  details">
+  <n1-guest-details [option]="   guest  "></n1-guest-details >
+</div>
+
+<div class="w-full  " *ngFor="let   request  of  special">
+  <n1-special-request [option]="   request  "></n1-special-request >
+</div>
+
+<div class="w-full  " *ngFor="let    trip  of  secure">
+  <n1-trip-secure [option]="  trip"></n1-trip-secure >
+</div>
+
+<div class="w-full  " *ngFor="let     mode  of  payment">
+  <n1-payment-options [option]="  mode"></n1-payment-options >
+</div>
+
+<div class="w-full  " *ngFor="let   pay  of  paynow">
+  <n1-pay-now [option]="   pay"></n1-pay-now >
+</div>
+
+ 
+
+<div class="w-full  " *ngFor="let   train  of  select">
+  <n1-select-travellers [option]=" train"></n1-select-travellers >
+</div>
+
+<div class="w-full  " *ngFor="let   fare  of  refund">
+  <n1-refund [option]="  fare"></n1-refund >
+</div>
+
+<div class="w-full  " *ngFor="let   traveller  of  add">
+  <n1-add-travellar [option]=" traveller"></n1-add-travellar>
+</div>
+
+<div class="w-full  " *ngFor="let   details  of  account">
+  <n1-account-details [option]=" details"></n1-account-details>
+</div>
+
+<div class="w-full  " *ngFor="let   information  of  contact">
+  <n1-contact-information [option]="  information"></n1-contact-information>
+  </div>
+
+  <div class="w-full  " *ngFor="let    discount  of  Offers">
+    <n1-offers-discounts [option]="  discount"></n1-offers-discounts>
+    </div>
+
+ <div class="w-full  " *ngFor="let     Preferences  of  addtional">
+      <n1-additions [option]="  Preferences"></n1-additions>
+      </div>
+
+  <div class="w-full  " *ngFor="let      advisory  of  travel">
+        <n1-travel-advisory [option]="  advisory"></n1-travel-advisory>
+        </div>
+
+        <div class="w-full  " *ngFor="let       book  of   pay">
+          <n1-pay-booknow [option]="   book"></n1-pay-booknow>
+          </div>
+     
+          <div class="w-full  " *ngFor="let       seller  of   best">
+            <n1-best-package [option]="    seller"></n1-best-package>
+            </div>
+
+            <div class="w-full  " *ngFor="let  details  of   train">
+              <n1-train-booking [option]="    details"></n1-train-booking>
+              </div>
+
+              <div class="w-full  " *ngFor="let   select  of   bus">
+                <n1-select-bus [option]="    select"></n1-select-bus >
+                </div>
+
+                <div class="w-full  " *ngFor="let    complete  of   booking">
+                  <n1-complete-bus-booking [option]="    complete"></n1-complete-bus-booking>
+                  </div>
+
+                  <div class="w-full  " *ngFor="let     travell  of   traveller_inf">
+                  <n1-bus-traveller-details [option]="    travell"></n1-bus-traveller-details>
+                  </div>
+
+                  <div class="w-full  " *ngFor="let      contact  of   bus_contact">
+                    <n1-bus-contact-details [option]="    contact"></n1-bus-contact-details>
+                    </div>
+
+                    <div class="w-full  " *ngFor="let mytrip  of   secure_my_trip">
+                      <n1-bus-secure [option]="    mytrip"></n1-bus-secure>
+                      </div>
+  
+                      
+                    <div class="w-full  " *ngFor="let mytrip  of   deal">
+                      <n1-bus-mydeal [option]="    mytrip"></n1-bus-mydeal>
+                      </div>
+
+                      <div class="w-full  " *ngFor="let  fareprice  of   price_details">
+                        <n1-bus-price-details [option]="    fareprice"></n1-bus-price-details>
+                        </div>
+  
+                        <div class="w-full  " *ngFor="let   selectcar  of   cab">
+                          <n1-select-cab [option]="    selectcar"></n1-select-cab >
+                          </div>
+
+
+                          <div class="w-full  " *ngFor="let    seat  of   bookingcab">
+                            <n1-cab-booking [option]=" seat"></n1-cab-booking>
+                            </div>
+
+                            <div class="w-full  " *ngFor="let points  of   exclusions">
+                              <n1-inclusions [option]=" points"></n1-inclusions>
+                              </div>
+
+                              <div class="w-full  " *ngFor="let  special of   requests">
+                                <n1-cab-special-req [option]=" special"></n1-cab-special-req>
+                                </div>
+         
+                                <div class="w-full  " *ngFor="let   details_traveller of   cab_details">
+                                  <n1-cab-traveller-details [option]=" details_traveller"></n1-cab-traveller-details>
+                                  </div>
+
+                                  
+                                <div class="w-full  " *ngFor="let   coupons of   offers">
+                                  <n1-cab-coupons [option]=" coupons"></n1-cab-coupons>
+                                  </div>
+
+                                  <div class="w-full  " *ngFor="let    paymentways of   payment_types">
+                                    <n1-cab-payment-options [option]=" paymentways"></n1-cab-payment-options>
+                                    </div>
+
+                                    
+                                  <div class="w-full  " *ngFor="let     selectinsurance of   insurance_type">
+                                    <n1-insurance-booking [option]=" selectinsurance"></n1-insurance-booking>
+                                    </div>
+
+
+                                    <div class="w-full  " *ngFor="let      choose of   choose_plan">
+                                      <n1-ins-choose-plan [option]=" choose"></n1-ins-choose-plan>
+                                      </div>
+   
+      
+                                      <div class="w-full  " *ngFor="let       passenger of  passenger_details">
+                                        <n1-ins-traveller-details [option]="  passenger"></n1-ins-traveller-details>
+                                        </div>
+     
+
+                                        <div class="w-full  " *ngFor="let        forex of  currency">
+                                          <n1-forex-currency [option]="  forex"></n1-forex-currency>
+                                          </div>
+
+                                          <div class="w-full  " *ngFor="let    card of  forex_card">
+                                            <n1-get-multi-currency [option]=" card"></n1-get-multi-currency>
+                                            </div>
+
+                                            <div class="w-full  " *ngFor="let  primary of  add_travellers">
+                                              <n1-forex-travellers-details [option]=" primary"></n1-forex-travellers-details>
+                                              </div>
+
+                                            
+
+                                              
+
+                                                <div class="w-full  " *ngFor="let choose  of  for_your">
+                                                  <n1-for-your-stay [option]="   choose"></n1-for-your-stay>
+                                                </div>
+
+
+                                                <div class="w-full  " *ngFor="let  complete  of  summary_booking">
+                                                  <n1-flight-summary [option]="   complete"></n1-flight-summary>
+                                                </div>
+
+                                                <div class="w-full  " *ngFor="let flight_delay  of   delay">
+                                                  <n1-fight-airport-pick-drop  [option]="   flight_delay"></n1-fight-airport-pick-drop>
+                                                </div>
+ 
+                                                <div class="w-full  " *ngFor="let flight_late  of   late">
+                                                  <n1-fight-delay-protection  [option]="   flight_late"></n1-fight-delay-protection>
+                                                </div>
+ 
+
+                                                
+                                                <div class="w-full  " *ngFor="let  plant  of   help">
+                                                  <n1-flght-help  [option]="   plant"></n1-flght-help>
+                                                </div>
+
+
+                                                <div class="w-full  " *ngFor="let   enter_upi  of   upi">
+                                                  <n1-upi-options  [option]="   enter_upi"></n1-upi-options>
+                                                </div>
+
+
+                                                <div class="w-full  " *ngFor="let    debit  of   credit">
+                                                  <n1-credit-debit [option]="   debit"></n1-credit-debit>
+                                                </div>
+
+                                                <div class="w-full  " *ngFor="let mothly  of   select_Emi">
+                                                  <n1-emi [option]="   mothly"></n1-emi>
+                                                </div>
+ 
+                                                
+ 
+                                                <div class="w-full  " *ngFor="let  banks  of    net_banking">
+                                                  <n1-net-banking [option]="   banks"></n1-net-banking>
+                                                </div>
+ 
+                                                <div class="w-full  " *ngFor="let  book_now  of    later">
+                                                  <n1-paylater [option]="   book_now"></n1-paylater>
+                                                </div>
+                                               
+
+                                                <div class="w-full  " *ngFor="let  wallet  of    gift">
+                                                  <n1-giftcard [option]="   wallet"></n1-giftcard>
+                                                </div>
+                                               
+                                            
+                                           
+       
