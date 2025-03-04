@@ -182,7 +182,7 @@ export const routes: Routes = [
                     {path: 'projects', component: PProjectsComponent}
                 ]
             },
-            {path: 'blank-page', component: BlankPageComponent},
+            {path: 'main-page', component: MainPageComponent},
             {path: 'internal-error', component: InternalErrorComponent},
             
             // Nithin Pages
