@@ -6,7 +6,8 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { N1DropdownAirportComponent, N1DropdownOptions } from '../n1-comps/n1-dropdown-airport';
 import { N1RadioComponent } from '../../app/inputs/elements/n1-radio';
 import { N1DepartureReturnComponent } from '../n1-comps/n1-departure-return';
-  
+import { Router } from '@angular/router';
+
          
  
 
@@ -247,7 +248,23 @@ export interface    icons{
  </div>
  
 
-
+ <div class="flex items-center justify-center  ">
+            <button
+                type="button"
+                class="px-2 py-1 bg-blue-500 text-black font-medium text-sm rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                (click)="navigateToSearch()"
+            >
+                <h6 class="text-lg mb-[10px]">
+                    <a
+                        routerLink=" "
+                        class="text-black dark:text-white transition-all hover:text-primary-500"
+                    >
+                        Search
+                    </a>
+                </h6>
+            </button>
+            
+        </div>
 
        </div>
       
@@ -295,7 +312,7 @@ export interface    icons{
       multi: true,
     },
   ],
-  imports: [FormsModule, CommonModule, N1DropdownAirportComponent, N1RadioComponent, N1DepartureReturnComponent]
+  imports: [FormsModule, CommonModule, N1DropdownAirportComponent, N1RadioComponent, N1DepartureReturnComponent,  ]
 })
 export class N1IconsTabsComponent {
   @Input() label: string = ' ';
@@ -322,6 +339,13 @@ export class N1IconsTabsComponent {
     Insurance:'',
      
    };
+   constructor(private router: Router) { }
+
+   navigateToSearch() {
+    this.router.navigate(['/search']);
+}
+
+
  fromDropdownOptions: N1DropdownOptions[] = [
     {
       id: 1,

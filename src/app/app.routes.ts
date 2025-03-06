@@ -74,7 +74,7 @@ export const routes: Routes = [
         path: '',
         component: DashboardComponent,
         children: [
-            {path: '', component: BlankPageComponent},
+            {path: '', component: MainPageComponent},
             {
                 path: 'inputs',
                 component: FormsComponent,
@@ -182,7 +182,7 @@ export const routes: Routes = [
                     {path: 'projects', component: PProjectsComponent}
                 ]
             },
-            {path: 'main-page', component: MainPageComponent},
+            {path: 'blank-page', component: BlankPageComponent},
             {path: 'internal-error', component: InternalErrorComponent},
             
             // Nithin Pages
